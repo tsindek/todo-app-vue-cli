@@ -38,6 +38,7 @@ Vue.createApp({
         description: this.newTodo,
         done: false,
       });
+      this.newTodo = "";
     },
 
     checkboxHandler(todo, event) {

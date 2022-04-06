@@ -16,7 +16,7 @@
     <main class="main">
         <section class="todo-input">
             <input id="todo-input__input" class="todo-input__input" type="text" placeholder="Get sh*t done!"
-                v-model="newTodo">
+                v-model="newTodo" @keypress.enter="addTodo()">
             <button class="button todo-input_button" id="add-todo-button" @click="addTodo()">Add</button>
         </section>
 
