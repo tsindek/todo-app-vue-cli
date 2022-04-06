@@ -40,9 +40,11 @@
             <h2 class="secondary-heading">Your Todos</h2>
             <ul class="todo-list__list">
                 <li class="todo-list__item" v-for="todo in filteredTodos" :key="">
-
-                    <input type="checkbox" name="" id="todo.id" @change="checkboxHandler(todo, $event)"
-                        :checked="todo.done" class="todo-item__checkbox">
+                    <label class="custom-checkbox">
+                        <input type="checkbox" name="" id="todo.id" @change="checkboxHandler(todo, $event)"
+                            :checked="todo.done">
+                        <span class="checkmark"></span>
+                    </label>
                     <label for="todo.id" :class="{'todo--done': todo.done}">{{todo.description}}</label>
                 </li>
             </ul>

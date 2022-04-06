@@ -33,12 +33,14 @@ Vue.createApp({
 
   methods: {
     addTodo() {
-      this.todos.push({
-        id: +new Date(),
-        description: this.newTodo,
-        done: false,
-      });
-      this.newTodo = "";
+      if (this.newTodo.length >= 5) {
+        this.todos.push({
+          id: +new Date(),
+          description: this.newTodo,
+          done: false,
+        });
+        this.newTodo = "";
+      }
     },
 
     checkboxHandler(todo, event) {
