@@ -9,7 +9,45 @@
     <title>Todo App</title>
 </head>
 
-<body>
+<body id="app">
+    <header class="header">
+        <h1 class="header__title">Todo App</h1>
+    </header>
+    <main class="main">
+        <section class="todo-input">
+            <input id="todo-input__input" class="todo-input__input" type="text" placeholder="Get sh*t done!"
+                v-model="newTodo">
+            <button class="button todo-input_button" id="add-todo-button" @click="addTodo()">Add</button>
+        </section>
+
+        <section class="filter-and-options">
+            <h2 class="secondary-heading">Filter & Options</h2>
+            <div class="radio-selector-container">
+                <input type="radio" name="" id="filter--all" class="radio-button" v-model="filterSelector" value="all"
+                    checked>
+                <label for="filter-all">All</label>
+                <input type="radio" name="" id="filter--open" class="radio-button" v-model="filterSelector"
+                    value="open">
+                <label for="filter-open">Open</label>
+                <input type="radio" name="" id="filter--done" class="radio-button" v-model="filterSelector"
+                    value="done">
+                <label for="filter-done">Done</label>
+            </div>
+            <button class="button" id="remove-done-todo-button" @click="removeDoneTodos">Remove Done Todos</button>
+        </section>
+
+        <section class="todo-list-container">
+            <h2 class="secondary-heading">Your Todos</h2>
+            <ul class="todo-list__list">
+                <li class="todo-list__item" v-for="todo in filteredTodos" :key="">
+
+                    <input type="checkbox" name="" id="todo.id" @change="checkboxHandler(todo, $event)"
+                        :checked="todo.done" class="todo-item__checkbox">
+                    <label for="todo.id" :class="{'todo--done': todo.done}">{{todo.description}}</label>
+                </li>
+            </ul>
+        </section>
+    </main>
 
     <script src="https://unpkg.com/vue@3"></script>
     <script src="script.js"></script>
