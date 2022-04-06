@@ -46,6 +46,7 @@ body {
 }
 
 /*************************************************************/
+/***** header area *****/
 
 .header {
   background-color: var(--secondary-c);
@@ -61,14 +62,15 @@ body {
   text-align: center;
 }
 
+/********************************************************/
+
 .main {
   max-width: 30ch;
   margin: 0 auto;
-  _display: flex;
-  _flex-direction: column;
-  _justify-content: center;
-  _align-items: baseline;
 }
+
+/********************************************************/
+/***** todo input form *****/
 
 .todo-input {
   margin: 1.5rem 0 3rem 0;
@@ -97,6 +99,9 @@ body {
   border: 0.12rem solid var(--tertiary-c);
 }
 
+/********************************************************/
+/***** filter / radio-selector *****/
+
 .radio-selector-container {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -121,6 +126,9 @@ body {
 .radio-button:focus {
   border: 0.12rem solid var(--tertiary-c);
 }
+
+/********************************************************/
+/***** todo list *****/
 
 .todo-list-container {
   margin-top: 3rem;
@@ -149,6 +157,9 @@ body {
   text-decoration: line-through;
 }
 
+/********************************************************/
+/***** custom checkbox *****/
+
 .custom-checkbox {
   width: 0.9rem;
   height: 0.9rem;
@@ -174,3 +185,5 @@ body {
 .custom-checkbox input {
   display: none;
 }
+
+/********************************************************/

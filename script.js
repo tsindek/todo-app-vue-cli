@@ -53,6 +53,7 @@ Vue.createApp({
         }
       }
     },
+
     removeDoneTodos() {
       this.todos = this.todos.filter((todo) => !todo.done);
     },
