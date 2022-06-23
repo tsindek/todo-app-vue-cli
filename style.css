@@ -1,0 +1,189 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+html {
+  font-size: 20px;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: var(--bg-base);
+}
+
+/*************************************************************/
+
+:root {
+  /* base-color for background */
+  --bg-base: #f5f5f5;
+
+  /* primary color - blue */
+  --primary-c: #3d89ae;
+
+  /* secondary color for accents - red*/
+  --secondary-c: #dd5571;
+
+  /* tertiary color for accents - yellow */
+  --tertiary-c: #ebad3d;
+
+  /* checkbox color - green */
+  --checkbox-c: #61d2a4;
+
+  /* text secondary color - white */
+  --text-secondary-c: #ffffff;
+
+  /* radio button border color - dark-blue */
+  --radio-c-dark: #183a4a;
+}
+
+/*************************************************************/
+/***** header area *****/
+
+.header {
+  background-color: var(--secondary-c);
+  margin: 0;
+}
+
+.header__title {
+  margin: 0;
+  color: var(--text-secondary-c);
+  text-shadow: 0.0625rem 0.0625rem var(--primary-c),
+    0.125rem 0.125rem var(--tertiary-c);
+  padding: 2.5rem;
+  text-align: center;
+}
+
+/********************************************************/
+
+.main {
+  max-width: 30ch;
+  margin: 0 auto;
+}
+
+/********************************************************/
+/***** todo input form *****/
+
+.todo-input {
+  margin: 1.5rem 0 3rem 0;
+  display: flex;
+}
+
+.todo-input__input {
+  margin-right: 0.9rem;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  flex-grow: 1;
+}
+
+.button {
+  all: unset;
+  background-color: var(--primary-c);
+  box-shadow: 0.12rem 0.12rem var(--secondary-c);
+  color: var(--text-secondary-c);
+  border: 0.12rem solid transparent;
+  padding: 0.4rem 0.4rem;
+  border-radius: 0.3rem;
+}
+
+.button:focus {
+  border: 0.12rem solid var(--tertiary-c);
+}
+
+/********************************************************/
+/***** filter / radio-selector *****/
+
+.radio-selector-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-gap: 0.3rem 0.3rem;
+  margin: 1rem 0 1rem 0;
+}
+
+.radio-button {
+  all: unset;
+  padding: 0.4rem;
+  margin: 0;
+  place-self: center;
+  background-color: var(--text-secondary-c);
+  border: 0.12rem solid var(--radio-c-dark);
+  border-radius: 50%;
+}
+
+.radio-button:checked {
+  background-color: var(--primary-c);
+}
+
+.radio-button:focus {
+  border: 0.12rem solid var(--tertiary-c);
+}
+
+/********************************************************/
+/***** todo list *****/
+
+.todo-list-container {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.todo-list__list {
+  margin: 0;
+  padding: 0;
+}
+
+.todo-list__list > * + * {
+  margin-top: 0.5rem;
+}
+
+.todo-list__item {
+  background-color: var(--text-secondary-c);
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.3rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.todo--done {
+  text-decoration: line-through;
+}
+
+/********************************************************/
+/***** custom checkbox *****/
+
+.custom-checkbox {
+  width: 0.9rem;
+  height: 0.9rem;
+  cursor: pointer;
+  display: flex;
+  margin-right: 0.6rem;
+}
+
+.custom-checkbox .checkmark {
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--radio-c-dark);
+  display: block;
+  background-color: var(--text-secondary-c);
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background: url(https://upload.wikimedia.org/wikipedia/commons/2/27/White_check.svg)
+    center/80% no-repeat;
+  background-color: #61d2a4;
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+/********************************************************/
